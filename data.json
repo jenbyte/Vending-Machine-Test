@@ -1,0 +1,42 @@
+{
+  "inventory": {
+    "1": {
+      "productCode": "A1",
+      "productName": "Tuna Sandwich",
+      "productCost": 3.25,
+      "quantity": 5
+    },
+    "2": {
+      "productCode": "A2",
+      "productName": "Egg & Sausage Sandwich",
+      "productCost": 3.25,
+      "quantity": 7
+    },
+    "3": {
+      "productCode": "A3",
+      "productName": "Peanut Butter & Jelly Sandwich",
+      "productCost": 3.75,
+      "quantity": 5
+    },
+    "4": {
+      "productCode": "A4",
+      "productName": "BLT Sandwich",
+      "productCost": 4,
+      "quantity": 0
+    },
+    "5": {
+      "productCode": "A5",
+      "productName": "Roastbeef Sandwich",
+      "productCost": 4.25,
+      "quantity": 8
+    }
+  },
+
+  "coinCase": {
+    "toonie": { "amount": 80, "value": 2 },
+    "loonie": { "amount": 50, "value": 1 },
+    "quarter": { "amount": 77, "value": 0.25 },
+    "dime": { "amount": 91, "value": 0.1 },
+    "nickle": { "amount": 100, "value": 0.05 }
+  }
+}
