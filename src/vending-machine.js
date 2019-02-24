@@ -21,33 +21,11 @@ class VendingMachine {
           sandwich.productCost
         }, qty: ${sandwich.quantity}`;
       } else if (!this.inventory[i].productName || !string) {
-        throw new Error('Invalid Item Name');
+        throw 'Invalid Item';
       }
 
-      if (this.inventory[i].productCode === string) {
-        console.log('************', this.inventory[i]);
-        return `${this.inventory[i].productName}, ${string}`;
-      }
-
-      // if (
-      //   this.inventory[i].productName === string ||
-      //   this.inventory[i].productCode === string
-      // ) {
-      //   console.log('************', this.inventory[i].productCode);
-      // return `(${this.inventory[i].productCode}): ${
-      //   this.inventory[i].productName
-      // } - $${this.inventory[i].productPrice}, qty: ${
-      //   this.inventory[i].quantity
-      // }`;
-      // }
-
+      // console.log('************', this.inventory[i]);
       // console.log('############', string);
-
-      // this.inventory.map(item => {
-      //   `${item.productName}: Code: ${item.productCode}, Price: $${
-      //     item.productCost
-      //   }, Qty: ${item.quantity},`;
-      // });
     } // end of for Loop
   } //end of queryInventory
 
