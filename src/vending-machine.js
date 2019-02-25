@@ -7,7 +7,10 @@ class VendingMachine {
   queryInventory(string) {
     for (let i = 1; i <= 5; i++) {
       let item = this.data.inventory[i];
-      if (item.productCode === string && item.quantity === 0) {
+      if (
+        (item.productCode === string && item.quantity === 0) ||
+        (item.productName === string && item.quantity === 0)
+      ) {
         return 'Sold Out';
       }
 
@@ -20,38 +23,14 @@ class VendingMachine {
     } // end of for Loop
   } //end of queryInventory()
 
-  restockInventory() {
-    let qty = 0;
-    this.slots.forEach(slot => {
-      const sw = this.data.inventory[slot];
-      if (sw.quantity < 10) {
-        sw.quantity = 10;
-      }
-      qty = sw.quantity;
-    });
-    return qty;
-  } // end of restockInventory()
-
-  refillChange() {
-    let coins = Object.keys(this.data.coinCase);
-    let amt = 0;
-    coins.map(value => {
-      let coin = this.data.coinCase[value];
-
-      if (coin.amount < 100) {
-        coin.amount = 100;
-      }
-      amt = coin.amount;
-    });
-    return amt;
-  } //end of refillChange()
-
   printInventory() {
     this.slots.forEach(slot => {
       const sw = this.data.inventory[slot];
-      const printInventory = `(${sw.productCode}) ${sw.productName}-$${
-        sw.productCost
-      }, qty: ${sw.quantity}`;
+      console.log(
+        `(${sw.productCode}) ${sw.productName}-$${sw.productCost}, qty: ${
+          sw.quantity
+        }`
+      );
     });
     return true;
   } // end of printInventory()
@@ -83,18 +62,43 @@ class VendingMachine {
     cents = Math.round(cents * 100) / 100;
     cents -= nickle * 0.05;
 
+    let change =
+      purchase.change != 0
+        ? `$${
+            purchase.change
+          } = $2*(${toonie}), $1*(${loonie}), 25¢*(${quarter}), 10¢*(${dime}), 5¢*(${nickle})`
+        : '$0.00';
+
     return purchase.change != null
-      ? `Name: ${purchase.name}, Change: $${
-          purchase.change
-        } = $2*(${toonie}), $1*(${loonie}), 25¢*(${quarter}), 10¢*(${dime}), 5¢*(${nickle}), VMQty: ${
-          purchase.vmQty
-        }`
+      ? `Name: ${purchase.name}, Change: ${change}, VMQty: ${purchase.vmQty}`
       : 'Insufficient Funds';
   } //end of purchaseItem()
+
+  restockInventory() {
+    let qty = 0;
+    this.slots.forEach(slot => {
+      const sw = this.data.inventory[slot];
+      if (sw.quantity < 10) {
+        sw.quantity = 10;
+      }
+      qty = sw.quantity;
+    });
+    return qty;
+  } // end of restockInventory()
+
+  refillChange() {
+    let coins = Object.keys(this.data.coinCase);
+    let amt = 0;
+    coins.map(value => {
+      let coin = this.data.coinCase[value];
+
+      if (coin.amount < 100) {
+        coin.amount = 100;
+      }
+      amt = coin.amount;
+    });
+    return amt;
+  } //end of refillChange()
 } //end of VendingMachine
 
 module.exports = VendingMachine;
-
-// let sum = data.pop.reduce((acc, val) => {
-//   return val.country === 'China' ? acc : acc + val.pop;
-// }, 0);

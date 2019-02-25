@@ -37,6 +37,6 @@
     "loonie": { "amount": 50, "value": 1 },
     "quarter": { "amount": 77, "value": 0.25 },
     "dime": { "amount": 91, "value": 0.1 },
-    "nickle": { "amount": 100, "value": 0.05 }
+    "nickle": { "amount": 0, "value": 0.05 }
   }
 }
