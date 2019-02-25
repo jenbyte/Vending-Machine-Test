@@ -1,9 +1,8 @@
 # Sandwich Vending Machine (TDD) 🥪
 
 Coding mock interview question:
-Implement a vending machine in JavaScript.
-
-The vending machine itself should be a Javascript class. You do not need to write an interface for using the vending machine, just tests to prove that it works.
+_Implement a vending machine in JavaScript.
+The vending machine itself should be a Javascript class. You do not need to write an interface for using the vending machine, just tests to prove that it works._
 
 ## Screenshots
 
@@ -24,9 +23,9 @@ Screenshot of Inventory:
 
 [Jest](https://jestjs.io/) for testing
 
-### Installation
+## Installation
 
-To get started, you must clone or download this repository to your machine.
+To get started, you must first clone or download this repository to your machine.
 
 ```In terminal
 cd vending-machine/
@@ -37,6 +36,7 @@ To run test: `npm test`
 
 ## Author
 
-💻 **Jennifer Yiu**, Fullstack Front-end Developer
+💻 **Jennifer Yiu**
+_Fullstack Front-End Developer_
 
 LinkedIn: [Jennifer Yiu](https://www.linkedin.com/in/jennifer-yiu-12145836/)
